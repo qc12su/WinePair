@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wine Pair</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Compiled and minified Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+
+    <!-- Compiled and minified Materialize JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
+          crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"
+            integrity="sha256-Sk3nkD6mLTMOF0EOpNtsIry+s1CsaqQC1rVLTAy+0yc= sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ=="
+            crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" type="text/css" href="./css/styles.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/directives/card.js"></script>
+</head>
+</head>
+<body ng-app="WinePair" ng-controller="controller">
+    <div class="box" name="form-box">
+        <div class="bgimg"></div>
+        <div class="box-icon">
+            <span class="fa fa-4x"></span>
+            <img src="./images/grapes_header.png" alt="Wine Header" style="width:150px;height:150px;">
+        </div>
+        <div class="info">
+            <h4 class="text-center font-white">Wine Pair</h4>
+            <form class="form-horizontal">
+                <fieldset>
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="textFood"><h5>Food</h5></label>
+                        <div class="col-md-4">
+                            <input list="browsers" id="textFood" name="textFood" ng-model="food" type="text" placeholder="Name of food"
+                                   class="form-control input-md" required="">
+                        </div>
+
+                        <datalist id="browsers">
+                            <option value="Spaghetti">
+                            <option value="Pasta">
+                            <option value="Rigatoni">
+                            <option value="Beef Steak">
+                            <option value="Chocolate">
+                            <option value="Fruits">
+                            <option value="Mushrooms">
+                            <option value="Marinara Pasta">
+                            <option value="Alfredo Pasta">
+                            <option value="Pasta ala Vodka">
+                            <option value="Penne Pasta">
+                            <option value="Chicken Pasta">
+                            <option value="Chicken Entree">
+                            <option value="Vegetable Pasta">
+
+                        </datalist>
+                    </div>
+                    <!-- Select Basic -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="selectFoodType"><h5>Type of Food</h5></label>
+
+                        <div class="col-md-4">
+                            <select id="selectFoodType" name="selectFoodType" class="form-control">
+                                <option value="meat">Meat</option>
+                                <option value="cheese">Cheese</option>
+                                <option value="poultry">Poultry</option>
+                                <option value="dessert">Dessert</option>
+                                <option value="pasta">Pasta and Grain</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4" for="selectFoodType"></label>
+
+                        <div class="col-md-4">
+                            <div class="panel-group" style="margin-bottom: 0px" id="accordion">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <a class="accordion-toggle collapsed" data-toggle="collapse"
+                                           data-parent="#accordion" href="#collapseOne">
+                                            <h4 class="panel-title" align="left" style="font-size: 18px">I know what I'm
+                                                doing!</h4>
+                                        </a>
+                                    </div>
+                                    <div id="collapseOne" class="panel-collapse collapse">
+                                        <div class="panel-body">
+
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label" for="selectFoodType"><h5>Wine Varietal</h5></label>
+
+                                                <div class="col-md-6">
+                                                    <select id="selectWineVarietal" name="selectWineVarietal" class="form-control">
+                                                        <option selected disabled hidden value=''></option>
+                                                        <option value="CabernetSauvignon">Cabernet Sauvignon</option>
+                                                        <option value="Chardonnay">Chardonnay</option>
+                                                        <option value="SauvignonBlanc">Sauvignon Blanc</option>
+                                                        <option value="PinotGris">Pinot Gris</option>
+                                                        <option value="PinotNoir">Pinot Noir</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label"><h5>Wine Color</h5></label>
+
+                                                <div class="col-md-6">
+                                                    <div class="btn-group col-xs-12" data-toggle="buttons">
+                                                        <label class="btn btn-default">
+                                                            <input type="checkbox" name="color" id="red" value="red">red
+                                                        </label>
+                                                        <label class="btn btn-default">
+                                                            <input type="checkbox" name="color" id="white" value="white">white
+                                                        </label>
+                                                        <label class="btn btn-default">
+                                                            <input type="checkbox" name="color" id="rose" value="rose">rose
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label"><h5>Price</h5></label>
+
+                                                <div class="col-md-6">
+                                                    <div class="btn-group col-xs-12" data-toggle="buttons">
+                                                        <label class="btn btn-default">
+                                                            <input type="checkbox" name="price" id="$" value="price$">$
+                                                        </label>
+                                                        <label class="btn btn-default">
+                                                            <input type="checkbox" name="price" id="$$" value="price$$">$$
+                                                        </label>
+                                                        <label class="btn btn-default">
+                                                            <input type="checkbox" name="price" id="$$$" value="price$$$">$$$
+                                                        </label>
+                                                        <label class="btn btn-default">
+                                                            <input type="checkbox" name="price" id="$$$$" value="price$$$$">$$$$
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-4"></div>
+                        <button type="button" class="btn btn-primary col-md-4" ng-click="search()">Find My Wine</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+    <div id="winesDiv" ng-repeat="wine in wines">
+        <card wine-name="{{wine.name}}" region="{{wine.region}}" varietal="{{wine.varietal}}" img-src="{{wine.imgSrc}}" rating={{wine.rating}} price="wine.price" action-link="{{wine.actionLink}}"></card>
+    </div>
+
+</body>
+</html>

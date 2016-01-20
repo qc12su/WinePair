@@ -1,0 +1,23 @@
+<div class="col-md-4">
+    <div class="card small">
+        <div class="card-image waves-effect waves-block waves-light col-md-12">
+            <img id="img" class="activator col-md-4" src={{imgSrc}}>
+        </div>
+        <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">{{wineName}}<i class="material-icons right">more_vert</i></span>
+
+        </div>
+        <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">{{wineName}}<i class="material-icons right">close</i></span>
+            <p><h4><b>Varietal:</b> {{varietal}}</h4></p>
+            <p><h4><b>Region:</b> {{region}}</h4></p>
+            <p><h4><b>Rating:</b> {{rating}}</h4></p>
+            <p><h4><b>Price:</b> ${{price.min}} to ${{price.max}}</h4></p>
+
+            <!--<a ng-href="{{actionLink}}"> !-->
+                <button class="btn waves-effect waves-light" ng-click="goToWinePage()">Purchase
+                    <i class="material-icons right">send</i>
+                </button>
+        </div>
+    </div>
+</div>
