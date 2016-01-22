@@ -1,6 +1,3 @@
-/**
- * Created by Tazrian Haider Rafi on 11/11/2015.
- */
 var http = require('http');
 var util = require('util');
 var path = require('path');
